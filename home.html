@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Ranchers&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    html {
+      font-size: 62.5%;
+
+    }
+    body {
+      margin: 0
+      padding: 2rem;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #2f3132;
+      background-size: cover;
+    }
+    #intro {
+      text-decoration: none;
+      font-size: 2.5rem;
+      margin: 40px;
+      color: #fff;
+      font-family: "Lobster", cursive;
+
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+        0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+    }
+    #main {
+      padding-top: 5rem;
+      width: 35rem;
+      height: 50rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 63px;
+      background: #2f3132;
+      box-shadow: inset 0px 0px 4px 4px #000000, inset -1px -1px 11px 0px #faf7f7;
+    }
+    img {
+      height: 18rem;
+      width: 18rem;
+      border-radius: 50%;
+      align-content: center;
+      background: linear-gradient(315deg, #424549, #303439);
+      box-shadow: 0px 1px 20px 20px #3e4858, 0px 0px 0px 13px #0d0d0d;
+      position: sticky;
+      animation-name: player;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+    @keyframes player {
+      0% {
+        box-shadow: 0px 0px 12px 0px #f4961a, 0px 0px 0px 2px #0d0d0d;
+      }
+      20% {
+        box-shadow: 0px 0px 12px 0px #fcf804, 0px 0px 0px 2px #0d0d0d;      }
+      40% {
+        box-shadow: 0px 0px 12px 0px #05f856, 0px 0px 0px 2px #0d0d0d;
+      }
+      60% {
+        box-shadow: 0px 0px 12px 0px #04f7ff, 0px 0px 0px 2px #0d0d0d;}
+      80% {
+        box-shadow: 0px 0px 12px 0px #5a06f7, 0px 0px 0px 2px #0d0d0d;
+      }
+      100% {
+        box-shadow: 0px 0px 12px 0px #f41a1a, 0px 0px 0px 2px #0d0d0d;}
+    }
+    h2 {
+      font-size: 4rem;
+      text-align: center;
+      color: #b0ada6;
+    }
+
+
+    .control {
+       margin:2rem;
+      width: 35rem;
+      font-size: 6rem;
+      display: flex;
+
+      justify-content: space-evenly;
+    }
+    #play{display: grid;
+        place-items: center;
+
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background: linear-gradient(315deg, #424549, #303439);
+        box-shadow: inset 0px 1px 17px 0px #3e4858, 0px 0px 15px 2px #0d0d0d;
+    }
+    #play:active{display: grid;
+        place-items: center;
+
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background: #3f495a;
+        box-shadow: inset -5px 5px 13px #262d37,
+        inset 5px -5px 13px #58657d;
+    }
+    #next:active{display: grid;
+        place-items: center;
+        font-size: 4rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background: #3f495a;
+        box-shadow: inset -5px 5px 13px #262d37,
+        inset 5px -5px 13px #58657d;
+    }
+    #prev:active{display: grid;
+        place-items: center;
+        font-size: 4rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background: #3f495a;
+        box-shadow: inset -5px 5px 13px #262d37,
+        inset 5px -5px 13px #58657d;
+    }
+    #prev{width: 8rem;
+        height: 8rem;display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: linear-gradient(315deg, #424549, #303439);
+        box-shadow: inset 0px 1px 17px 0px #3e4858, 0px 0px 15px 2px #0d0d0d;
+    }
+    #next{width: 8rem;
+        height: 8rem;display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: linear-gradient(315deg, #424549, #303439);
+        box-shadow: inset 0px 1px 17px 0px #3e4858, 0px 0px 15px 2px #0d0d0d;
+    }
+    i{
+      color: rgb(13, 240, 240);
+
+    }
+    .play :active{
+        border-radius: 50%;
+        background: #3f495a;
+        box-shadow: inset -5px 5px 13px #262d37,
+        inset 5px -5px 13px #58657d;
+    }
+  </style>
+
+  <body>
+    <div id="main">
+      <img
+        src="https://media4.giphy.com/media/1yYmq9B4l7fXy/giphy.gif"
+        alt="img"
+      />
+
+      <h2>Cross fire</h2>
+
+      <audio
+        src="https://www.mboxdrive.com/Stephen%20-%20Crossfire%20(TWINSICK%20Remix).mp3"
+      ></audio>
+
+      <div class="control">
+        <i class="fas fa-arrow-circle-left" id="prev" title="Prev"></i>
+        <i class="far fa-play-circle" id="play" title="Play"></i>
+        <i class="fas fa-arrow-circle-right" id="next" title="Next"></i>
+      </div>
+    </div>
+    <div></div>
+    <a href="https://www.instagram.com/rohit_yadav_yt/?hl=en" id="intro"
+      >Made with 💚 by Rohit</a
+    >
+
+    <script>
+      playlist = [
+        "https://www.mboxdrive.com/Warriyo%20-%20Mortals%20(feat.%20Laura%20Brehm)%20[NCS%20Release](1).mp3",
+        "https://www.mboxdrive.com/Sub%20Urban%20-%20Cradles%20[NCS%20Release].mp3",
+        "https://www.mboxdrive.com/NIVIRO%20-%20The%20Guardian%20Of%20Angels%20[NCS%20Release].mp3",
+        "https://www.mboxdrive.com/Max%20Brhon%20-%20Cyberpunk%20[NCS%20Release].mp3",
+        "https://www.mboxdrive.com/DJ%20ASSASS1N%20-%20Frag%20Out%20[Privated].mp3",
+        "https://www.mboxdrive.com/OLWIK%20-%20Taking%20Over%20(feat.%20Alexa%20Lusader)%20[NCS%20Release].mp3",
+      ];
+      songname = [
+        "Mortals",
+        "Sub-Urban Cradles",
+        "The Gaurdian of angels",
+        "Cyber punk",
+        "Frag out",
+        "taking over",
+      ];
+      const music = document.querySelector("audio");
+      const h2 = document.querySelector("h2");
+      const play = document.getElementById("play");
+      const next = document.getElementById("next");
+      const prev = document.getElementById("prev");
+      let playing = false;
+      var songno = 0;
+
+      const playm = () => {
+        playing = true;
+        music.play();
+        play.classList.replace("fa-play-circle", "fa-pause-circle");
+      };
+      const pausem = () => {
+        playing = false;
+        music.pause();
+        play.classList.replace("fa-pause-circle", "fa-play-circle");
+      };
+      play.addEventListener("click", () => {
+        if (playing) {
+          pausem();
+        } else {
+          playm();
+        }
+      });
+      let nxt = () => {
+        if (songno > 3) {
+          songno = 3;
+        } else {
+          songno = songno + 1;
+          music.src = playlist[songno];
+          h2.innerHTML = songname[songno];
+        }
+      };
+      next.addEventListener("click", nxt);
+      next.addEventListener("click", playm);
+
+      let pre = () => {
+        if (songno < 1) {
+          songno = 1;
+        } else {
+          songno = songno - 1;
+          music.src = playlist[songno];
+          h2.innerHTML = songname[songno];
+        }
+      };
+      prev.addEventListener("click", pre);
+      prev.addEventListener("click", playm);
+    </script>
+  </body>
+</html>
